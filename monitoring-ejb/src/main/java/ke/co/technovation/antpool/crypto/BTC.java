@@ -34,7 +34,6 @@ public class BTC {
 				result.append(line);
 			}
 			String results = result.toString();
-			System.out.println(results);
 			JSONObject jsob = new JSONObject(results).getJSONObject("USD");
 			
 			usdEq = jsob.getBigDecimal("sell");

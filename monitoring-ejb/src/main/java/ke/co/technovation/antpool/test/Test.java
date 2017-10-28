@@ -71,8 +71,10 @@ public class Test {
 			BigDecimal balance_kes = FiatExchangeRate.getExchangeFiat(balance_usd,"USD","KES");
 			BigDecimal earnTotal_usd = earnTotal.multiply( btc_selling_price);
 			BigDecimal earnTotal_kes = FiatExchangeRate.getExchangeFiat(balance_usd,"USD","KES");
+			System.out.println(" Balance BTC.  --> "+balance);
 			System.out.println(" Balance Kes.  --> "+balance_kes);
 			System.out.println(" Balance USD.  --> "+balance_usd);
+			System.out.println(" Total So Far BTC.  --> "+earnTotal);
 			System.out.println(" Total So Far Kes.  --> "+earnTotal_kes);
 			System.out.println(" Total So Far USD.  --> "+earnTotal_usd);
 		}else{
