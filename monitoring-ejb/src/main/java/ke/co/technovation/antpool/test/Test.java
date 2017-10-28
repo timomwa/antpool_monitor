@@ -68,16 +68,20 @@ public class Test {
 			BigDecimal paidOut = data.getBigDecimal("paidOut");
 			BigDecimal balance = data.getBigDecimal("balance");
 			BigDecimal btc_selling_price = BTC.getPrice();
+			BigDecimal earn24Hours_usd = earn24Hours.multiply( btc_selling_price);
+			BigDecimal earn24Hours_kes = FiatExchangeRate.getExchangeFiat(earn24Hours_usd,"USD","KES");
 			BigDecimal balance_usd = balance.multiply( btc_selling_price);
 			BigDecimal balance_kes = FiatExchangeRate.getExchangeFiat(balance_usd,"USD","KES");
 			BigDecimal earnTotal_usd = earnTotal.multiply( btc_selling_price);
-			BigDecimal earnTotal_kes = FiatExchangeRate.getExchangeFiat(balance_usd,"USD","KES");
+			BigDecimal earnTotal_kes = FiatExchangeRate.getExchangeFiat(earnTotal_usd,"USD","KES");
 			System.out.println(" Balance BTC.  --> "+balance);
 			System.out.println(" Balance Kes.  --> "+balance_kes);
 			System.out.println(" Balance USD.  --> "+balance_usd);
 			System.out.println(" Total So Far BTC.  --> "+earnTotal);
 			System.out.println(" Total So Far Kes.  --> "+earnTotal_kes);
 			System.out.println(" Total So Far USD.  --> "+earnTotal_usd);
+			System.out.println(" Last 24 Hour USD.  --> "+earn24Hours_usd);
+			System.out.println(" Last 24 Hour KES.  --> "+earn24Hours_kes);
 		}else{
 			System.out.println(results);
 		}
