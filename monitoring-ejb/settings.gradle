@@ -1,0 +1,4 @@
+gradle.ext.javacPath = '/Library/Java/JavaVirtualMachines/jdk1.8.0_121.jdk/Contents/Home/bin/javac'
+gradle.ext.theName = 'monitoring-ejb'
+gradle.ext.theGroup = 'antpool'
+gradle.ext.theVersion = 1.0

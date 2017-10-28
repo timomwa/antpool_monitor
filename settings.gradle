@@ -1,0 +1,7 @@
+include ':monitoring-ejb',':monitoring-web'
+//Edit this to point to where your javac is.
+gradle.ext.javacPath = '/Library/Java/JavaVirtualMachines/jdk1.8.0_121.jdk/Contents/Home/bin/javac'
+
+gradle.ext.theName = 'monitoring'
+gradle.ext.theGroup = 'antpool'
+gradle.ext.theVersion = 1.0

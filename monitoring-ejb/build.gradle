@@ -1,0 +1,43 @@
+apply plugin: 'java'
+apply plugin: 'maven'
+
+group = gradle.theGroup
+version = gradle.theVersion
+jar {
+	baseName = gradle.theName
+	version = gradle.theVersion
+}
+sourceCompatibility = 1.8
+targetCompatibility = 1.8
+
+repositories {
+	mavenLocal()
+	mavenCentral()
+}
+dependencies {
+	compile group: 'javax', name: 'javaee-api', version: '7.0'
+	compile group: 'log4j', name: 'log4j', version: '1.2.17'
+	compile group: 'org.hibernate', name: 'hibernate-core', version: '5.0.0.Final'
+	compile group: 'org.hibernate', name: 'hibernate-entitymanager', version: '5.0.0.Final'
+	compile group: 'org.hibernate', name: 'hibernate-infinispan', version: '5.0.0.Final'
+	compile group: 'org.hibernate', name: 'hibernate-annotations', version: '3.5.6-Final'
+	compile group: 'org.jasypt', name: 'jasypt-hibernate4', version: '1.9.0'
+	compile group: 'redpesa', name: 'redpesa-ejb', version: '1.0'
+	compile group: 'org.json', name: 'json', version: '20160810'
+	compile group: 'org.apache.xmlgraphics', name: 'fop', version: '2.1'
+	compile group: 'org.jasypt', name: 'jasypt-hibernate4', version: '1.9.2'
+	compile group: 'javax.mail', name: 'mail', version: '1.4.7'
+	compile group: 'joda-time', name: 'joda-time', version: '2.9.6'
+	//For remoting
+	compile group: 'org.jboss', name: 'jboss-remote-naming', version: '2.0.4.Final'
+	compile group: 'org.jboss.xnio', name: 'xnio-nio', version: '3.2.0.Final'
+	compile group: 'org.jboss.remoting', name: 'jboss-remoting', version: '4.0.0.Final'
+	compile group: 'org.apache.httpcomponents', name: 'httpclient', version: '4.3.6'
+}
+	
+configurations {
+	runtime.exclude group: "org.slf4j", module: "slf4j-api"
+	runtime.exclude group: "org.slf4j", module: "slf4j-parent"
+	runtime.exclude group: "org.jboss", module: "jboss-parent"
+	runtime.exclude group: "org.dom4j"
+}
