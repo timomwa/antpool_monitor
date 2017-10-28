@@ -15,6 +15,7 @@ import org.apache.http.impl.client.HttpClientBuilder;
 import org.apache.http.message.BasicNameValuePair;
 import org.json.JSONObject;
 
+import ke.co.technovation.antpool.api.APIMethods;
 import ke.co.technovation.antpool.crypto.BTC;
 import ke.co.technovation.antpool.fiat.FiatExchangeRate;
 import ke.co.technovation.antpool.sinature.Signature;
@@ -27,7 +28,7 @@ public class Test {
 		String results = "";
 		try{
 			
-			String url_base = "https://antpool.com/api/account.htm";
+			String url_base = "https://antpool.com/api/".concat( APIMethods.ACCOUNT_INFO.getPathParam() );
 			
 			HttpClient client = HttpClientBuilder.create().build();
 			HttpPost post = new HttpPost(url_base);
